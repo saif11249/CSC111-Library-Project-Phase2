@@ -1,3 +1,5 @@
+package phase2;
+
 public class Member {
 
 	private int id;
@@ -11,74 +13,84 @@ public class Member {
 	public static int TotalViewBorrowed;
 	public static int TotalBorrows;
 	public static int TotalReturns;
-	
-	Member( int id , String name ) {
-		
+
+	public Member(int id, String name) {
+
 		this.id = id;
 		this.name = name;
 		this.borrowedCount = borrowedCount;
 		this.numViewBorrowed = 0;
 		this.numBorrows = 0;
 		this.numReturns = 0;
-		this.sessionFees = 0.0; 
+		this.sessionFees = 0.0;
 	}
-	
-				
-		
-		private boolean canBorrow() {
-			return borrowedCount < 5;
-		}
-		
-		
-		private boolean canReturn() {
-			return borrowedCount > 0;
-		}
-		
-		
-		public void viewBorrowedCount() {
-			
-			System.out.println("the total book borrowed is: " + borrowedCount);
-			numViewBorrowed++;
-			TotalViewBorrowed++;
-		}
-		
-		
-		public boolean borrowOne() {
-			if (canBorrow()) {
-				borrowedCount++;
-				numBorrows++;
-				sessionFees += 0.5;
-				TotalRevenue += 0.5;
-				TotalBorrows++;
-				return true;
-			}
-			return false;	
-		}
-		
-		public boolean returnOne() {
-			
-			if (canReturn()) {
-				numReturns++;
-				TotalReturns++;
-				borrowedCount--;
-				return true;
-			}
-			return false;
-		}
-		public void displayStatistics() {
-			System.out.println("number of borrowed book is: " + borrowedCount);
-			System.out.println("number of times the book display order executed: " + numViewBorrowed);
-			System.out.println("number of borrowes order executed: " + numBorrows);
-			System.out.println("number of returns order executed: " + numReturns);
-			System.out.println("number of session fees :" + sessionFees);
-		}
-		public void reset() {
-			numViewBorrowed = 0;
-			numBorrows = 0;
-			numReturns = 0;
-			sessionFees = 0.0;
-			
-			
-		}
-		
+
+	private boolean canBorrow() {
+		return borrowedCount < 5;
 	}
+
+	private boolean canReturn() {
+		return borrowedCount > 0;
+	}
+
+	public void viewBorrowedCount() {
+
+		System.out.println("the total book borrowed is: " + borrowedCount);
+		numViewBorrowed++;
+		TotalViewBorrowed++;
+		System.out.println("");
+	}
+
+	public boolean borrowOne() {
+		if (canBorrow()) {
+			System.out.print("successfully to borrow book: ");
+			borrowedCount++;
+			numBorrows++;
+			sessionFees += 0.5;
+			TotalRevenue += 0.5;
+			TotalBorrows++;
+			System.out.println(borrowedCount);
+			System.out.println("");
+			return true;
+		} else
+			System.out.println("you can't borrowed more than 5 book");
+		System.out.println("");
+		return false;
+	}
+
+	public boolean returnOne() {
+
+		if (canReturn()) {
+			System.out.print("successfully to return book: ");
+			numReturns++;
+			TotalReturns++;
+			borrowedCount--;
+			System.out.println(numReturns);
+			System.out.println("");
+			return true;
+
+		} else
+			System.out.println("you must have one book at least");
+		System.out.println("");
+		return false;
+	}
+
+	public void displayStatistics() {
+		System.out.println("number of borrowes order executed: " + numBorrows);
+		System.out.println("number of times the book display order executed: " + numViewBorrowed);
+		System.out.println("number of borrowed book is: " + borrowedCount);
+		System.out.println("number of returns order executed: " + numReturns);
+		System.out.println("number of session fees :" + sessionFees);
+		System.out.println("");
+	}
+
+	public void reset() {
+		numViewBorrowed = 0;
+		numBorrows = 0;
+		numReturns = 0;
+		sessionFees = 0.0;
+		System.out.println("");
+
+	}
+
+}
