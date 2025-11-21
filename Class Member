@@ -86,6 +86,7 @@ public class Member {
 
 	public void reset() {
 		numViewBorrowed = 0;
+		borrowedCount = 0;
 		numBorrows = 0;
 		numReturns = 0;
 		sessionFees = 0.0;
