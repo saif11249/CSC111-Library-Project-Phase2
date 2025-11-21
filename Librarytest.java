@@ -151,7 +151,7 @@ public class Librarytest {
 						}
 					} 
 					while (choice15 != '3');
-
+					break;
 				}
 				else {
 					System.out.println("invalid password!");
@@ -165,3 +165,4 @@ public class Librarytest {
 	}
 
 }
+
