@@ -94,13 +94,13 @@ public class LibrarySimulator {
 		                                        borrowedbook++;
 		                                        if (choice_2.equals(name1)) {
 		                                            borrowedFahad++;
-		                                            total_Fahad += borrowed_fee;
+		                                            total_Fahad += borrowed_fee; //to have total borrowed fee
 		                                        } else if (choice_2.equals(name2)) {
 		                                            borrowedYazeed++;
-		                                            total_Yazeed += borrowed_fee;
+		                                            total_Yazeed += borrowed_fee; //to have total borrowed fee
 		                                        } else {
 		                                            borrowedSaif++;
-		                                            total_Saif += borrowed_fee;
+		                                            total_Saif += borrowed_fee; //to have total borrowed fee
 		                                        }
 		                                        System.out.println(borrowedbook);
 		                                        System.out.println("");
